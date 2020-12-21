@@ -10,13 +10,20 @@ class App extends React.Component{
       {name : 'Max', age : 28},
       {name : 'Manu', age : 23},
       {name : 'Stephanie', age : 28}
-    ]
+    ],
+    otherState : 'some other value'
     
   }
 
   switchNameHandler = () => {
-    console.log('Was Clicked');
-    
+    //console.log('Was Clicked');
+    //Don't to this - this.state.persons[0].name = 'hano';
+    this.setState({persons: [
+      {name : 'Hano', age : 24},
+      {name : 'Jieun', age : 26},
+      {name : 'Hanoo', age : 22}
+    ]
+  })
   }
 
 
