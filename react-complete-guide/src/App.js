@@ -5,7 +5,12 @@ import React, { createElement } from 'react'
 class App extends React.Component{
 
   render(){
-    return React.createElement('div',{className: 'App'},React.createElement('h1',null,'Does this work now?'));
+    return (
+      <div className = "App">
+        <h1>title</h1>
+        <p>this is really working!</p>
+      </div>
+    )
   }
 
 }
