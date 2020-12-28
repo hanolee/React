@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-
+import Cockpit from '../Components/Cockpit/Cockpit'
 import Radium , {StyleRoot} from 'radium';
 import Persons from '../Components/Persons/Persons';
 
@@ -77,39 +77,21 @@ class App extends Component {
     let persons = null;
 
     if (this.state.showPersons) {
-      persons = (
-        <div>
-          {this.state.persons.map((person, index) => {
-            return (
-              <Persons
+      persons = <Persons
                 persons={this.state.persons}
                 clicked={this.deletePersonHandler}
                 changed={this.nameChangedHandler}/>
-          )
-          })}
-        </div> 
-      );
-      style.backgroundColor = 'green';
-      style[":hover"] = {
-        backgroundColor : "lightBlue",
-        color : "white"
-      }
     }
 
-    //const classes = ['red', 'bold'].join(' ');
-    const classes = [];
-    if (this.state.persons.length<= 2){
-      classes.push('red');
-    }
-    if (this.state.persons.length<= 1){
-      classes.push('bold');
-    }
 
 
     return (
       <StyleRoot>
         <div className="App">
-          
+            <Cockpit
+              showPersons = {this.state.showPersons}
+              persons = {this.state.persons}
+              clicked = {this.togglePersonsHandler}/>
             {persons}
         </div>
       </StyleRoot>
