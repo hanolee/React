@@ -1,9 +1,10 @@
 import React , {useState} from 'react'
 import EndorfinChart from './Components/endorfinChart'
+import getData from './ContractFeed/constractFeed'
 //import './Contract/oraclecontracts_Mainnet'
 
 function App() {
-  
+  console.log(getData())  
   const [index, setIndex] =  useState(0)
   
   let a = 12
@@ -18,10 +19,13 @@ function App() {
   }
   //블록스탬프 찍어서 x값 설정 86400으로 나눠서 1440으로 나누고 등등 시간을 추가해주기
   //y값은 sum함수 이용해서 3개의 값 더해주고, 배열에 push해주기
+  const xValue = [1,2,3]
+  const yValue = [2,6,3]
+
   const data = [
     {
-      x: [1, 2, 3],
-      y: [2, 6, 3],
+      x: {xValue},
+      y: {yValue},
       type: 'scatter',
       mode: 'lines+markers',
       marker: {color: 'red'},
